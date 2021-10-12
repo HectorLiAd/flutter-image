@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:local_auth/local_auth.dart';
+import 'package:local_auth/local_auth.dart'; //Importante
 import 'package:local_auth_fingerprint/home_page.dart';
 import 'package:local_auth_fingerprint/ui/imagen_main.dart';
 
 class AuthPath extends StatefulWidget {
   const AuthPath({Key key}) : super(key: key);
-
   @override
   _AuthPathState createState() => _AuthPathState();
 }
@@ -16,7 +15,6 @@ class _AuthPathState extends State<AuthPath> {
   bool _hasBioSensor;
 
   LocalAuthentication authentication = LocalAuthentication();
-
 
   Future<void> _checkBio() async{
     try{
@@ -39,15 +37,15 @@ class _AuthPathState extends State<AuthPath> {
     //loaded a dialog to scan fingerprint
     try{
       isAuth = await authentication.authenticateWithBiometrics(
-        localizedReason: 'Oe pon el dedo del dueño pe causita',
+        localizedReason: 'Ponga su huella dactilar para poder acceder a las fotos',
         // biometricOnly: true,
         useErrorDialogs: true,
         stickyAuth: true
       );
-
       //if fingerprint scan match then
       //isAuth = true
       // therefore will navigate user to WelcomePage/HomePage of the App
+
       if(isAuth){
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder)=>ImagenUI()));
       }
@@ -75,7 +73,7 @@ class _AuthPathState extends State<AuthPath> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Oe pon el dedo del dueño',
+            'Autentificaciòn biometrica',
             style: TextStyle(fontSize: 30),
           ),
           const SizedBox(

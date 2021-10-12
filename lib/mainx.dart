@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         create: (_) => ImagenApi.create(),
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Heulla dactilar',
+            title: 'Flutter Huella dactilar',
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),

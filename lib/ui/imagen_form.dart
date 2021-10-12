@@ -137,7 +137,7 @@ class _ImagenFormState extends State<ImagenForm> {
           final pickedFile = await _picker.getImage(source: ImageSource.gallery);
           this._imagePath = pickedFile.path;
           setState(() {});
-          /*if (pickedFile != null) {
+          if (pickedFile != null) {
             File croppedFile = await ImageCropper.cropImage(
                 sourcePath: pickedFile.path,
                 aspectRatioPresets: [
@@ -162,7 +162,7 @@ class _ImagenFormState extends State<ImagenForm> {
                 _imagePath = croppedFile.path;
               });
             }
-          }*/
+          }
         },
         child: Text('Seleccione una imagen'),
       ),
